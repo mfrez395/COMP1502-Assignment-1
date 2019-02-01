@@ -28,37 +28,37 @@ These pieces of data will be exapanded on in the **private implementation** sect
 
 ##### Mutators
 
-`recordShot` - the method `recordShot` will mutate the value of the instance variable `shots` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
+* `recordShot` - the method `recordShot` will mutate the value of the instance variable `shots` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
 
-`recordGoal` - the method `recordGoal` will mutate the value of the instance variable `goals` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
+* `recordGoal` - the method `recordGoal` will mutate the value of the instance variable `goals` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
 
-`recordPPG` - the method `recordPPG` will mutate the value of the instance variable `ppg` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
+* `recordPPG` - the method `recordPPG` will mutate the value of the instance variable `ppg` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
 
-`recordPPA` - the method `recordPPA` will mutate the value of the instance variable `ppa` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
+* `recordPPA` - the method `recordPPA` will mutate the value of the instance variable `ppa` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
 
-#### Accessors
+##### Accessors
 
-`getName` - the method `getName` has a purpose of allowing the caller access the to player's `name` variable. The method will not recieve any arguements but it will return the String value of `name`.
+* `getName` - the method `getName` has a purpose of allowing the caller access the to player's `name` variable. The method will not recieve any arguements but it will return the String value of `name`.
 
-`getPosition` - the method `getPosition` has a purpose of allowing the caller access the to player's `position` variable. The method will not recieve any arguements but it will return the enum value of `position`.
+* `getPosition` - the method `getPosition` has a purpose of allowing the caller access the to player's `position` variable. The method will not recieve any arguements but it will return the enum value of `position`.
 
-`getJerseyNumber` - the method `getJerseyNumber` has a purpose of allowing the caller access the to player's `jerseyNumber` variable. The method will not recieve any arguements but it will return the String value of `jerseyNumber`.
+* `getJerseyNumber` - the method `getJerseyNumber` has a purpose of allowing the caller access the to player's `jerseyNumber` variable. The method will not recieve any arguements but it will return the String value of `jerseyNumber`.
 
-`getDateOfBirth` - the method `getDateOfBirth` has a purpose of allowing the caller access the to player's `dateOfBirth` variable. The method will not recieve any arguements but it will return the String value of `dateOfBirth`.
+* `getDateOfBirth` - the method `getDateOfBirth` has a purpose of allowing the caller access the to player's `dateOfBirth` variable. The method will not recieve any arguements but it will return the String value of `dateOfBirth`.
 
-`getWeight` - the method `getWeight` has a purpose of allowing the caller access the to player's `weight` variable. The method will not recieve any arguements but it will return the String value of `weight`.
+* `getWeight` - the method `getWeight` has a purpose of allowing the caller access the to player's `weight` variable. The method will not recieve any arguements but it will return the String value of `weight`.
 
-`getHeight` - the method `getHeight` has a purpose of allowing the caller access the to player's `height` variable. The method will not recieve any arguements but it will return the String value of `height`.
+* `getHeight` - the method `getHeight` has a purpose of allowing the caller access the to player's `height` variable. The method will not recieve any arguements but it will return the String value of `height`.
 
-`getGoals` - the method `getGoals` has a purpose of allowing the caller access the to player's `goals` variable. The method will not recieve any arguements but it will return the int value of `goals`.
+* `getGoals` - the method `getGoals` has a purpose of allowing the caller access the to player's `goals` variable. The method will not recieve any arguements but it will return the int value of `goals`.
 
-`getAssists` - the method `getAssists` has a purpose of allowing the caller access the to player's `assists` variable. The method will not recieve any arguements but it will return the int value of `assists`.
+* `getAssists` - the method `getAssists` has a purpose of allowing the caller access the to player's `assists` variable. The method will not recieve any arguements but it will return the int value of `assists`.
 
-`getPPG` - the method `getPPG` has a purpose of allowing the caller access the to player's `ppg` variable. The method will not recieve any arguements but it will return the int value of `ppg`.
+* `getPPG` - the method `getPPG` has a purpose of allowing the caller access the to player's `ppg` variable. The method will not recieve any arguements but it will return the int value of `ppg`.
 
-`getPPA` - the method `getPPA` has a purpose of allowing the caller access the to player's `ppa` variable. The method will not recieve any arguements but it will return the int value of `ppa`.
+* `getPPA` - the method `getPPA` has a purpose of allowing the caller access the to player's `ppa` variable. The method will not recieve any arguements but it will return the int value of `ppa`.
 
-`getShots` - the method `getShots` has a purpose of allowing the caller access the to player's `shots` variable. The method will not recieve any arguements but it will return the int value of `shots`.
+* `getShots` - the method `getShots` has a purpose of allowing the caller access the to player's `shots` variable. The method will not recieve any arguements but it will return the int value of `shots`.
 
 ### Private Implementation
 
@@ -89,14 +89,32 @@ The PlayerList class's primary function is to maintain a collection of Player ob
 
 ### Public Interface
 
-The PlayerList class  
+#### Methods
 
-Public methods
-* `recordShot(String playerNumber)` - 
-* `getPlayer(String playerNumber)` - The method **getPlayer** will
-* 
+##### Mutators
+
+* `recordShot(String playerNumber)`
+
+* `recordGoal(String goalPlayerNumber)`
+* `recordGoal(String goalPlayerNumber, assistPlayerNumber)`
+* `recordGoal(String goalPlayerNumber, assistPlayerNumber, assist2PlayerNumber)`
+
+* `recordPPG(String ppgPlayerNumber)`
+* `recordPPG(String ppgPlayerNumber, ppaPlayerNumber)`
+* `recordPPG(String ppgPlayerNumber, ppaPlayerNumber, ppa2PlayerNumber)`
+
+##### Accessors
+
+* `getPlayer(String playerNumber)` - `getPlayer` will return a player from the list that matches the player number entered. The method will receive the arguement `playerNumber` as a String and will return the respective Player object in the `players` ArrayList. THe method will include a search algorithm that will look through the `players` ArrayList to find the Player object with a `jerseyNumber` that matches `playerNumber`. The method will return -1 if no Player is found. 
+
+##### Helpers
+
+* `saveToFile()`
+* `populateFromFile`
 
 ### Private Implementation
+
+
 
 #### Constructors_
 

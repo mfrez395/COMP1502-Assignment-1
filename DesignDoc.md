@@ -2,7 +2,7 @@
 
 ## Player Class
 
-The Player class holds the values of a single player and encapsulates all the following data:
+The Player class is an object that's primary function is to holds the values of a single player and can increment shots, goals, assists, powerplay goals and powerplay assists of the specific player. The class encapsulates all the following data:
 * Name
 * Postion
 * Jersey Number
@@ -48,7 +48,10 @@ _Instance Variables
 * `int ppa` - `ppa` is of type int and describes the number of powerplay assists accumulated by the player.
 * `int shots` - `shots` is of type int and describes the number of shots the player has taken.
 
+
 ## PlayerList Class
+
+The PlayerList class's primary function is to maintain a collection of Player objects and communicate with a specific player to increment specific statistics. The encapsulated information is the collection of players and the file name of where the information is stored after the program is closed. The PlayerList class has an aggregation relationship with the class Player.java. The class is made up of players but is not dependant on players to function. The PlayerList class assumes there is already a file that includes data (and is not empty) of player information seperated by a comma.
 
 ### Public Interface
 

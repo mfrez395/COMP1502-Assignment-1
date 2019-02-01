@@ -16,19 +16,53 @@ The Player class is an object that's primary function is to holds the values of 
 * Power Play Assists
 * Shots
 
-These pieces of data will be exapanded on in the **private implementation** section.
+These pieces of data will be exapanded on in the **private implementation** section. The Player class has a composition relationship with the class String and enum because it is dependant and made up of Strings and an enum in order to properly function. The Player class assumes that the class that implements Player will already have the data to fill the descriptive data (Name - Height) of the player. The Player class also assumes that any given player starts off with zero shots, goals, assists, powerplay goals and powerplay assists. 
 
 ### Public Interface
 
-_Constructors
+#### Constructors
 
-`Player(Name, Position, JerseyNumber, DateOfBirth, HomeTown, Height)` - In this constructor, the player information is passed in and the 
+`Player(Name, Position, JerseyNumber, DateOfBirth, HomeTown, Height)` - In this constructor, the player descriptive information is passed in and all statistical information is initialized with the value `0`. The pointer of a player with the information that is encapuslated in the class is returned to the class that implements Player.
 
+#### Methods
 
+##### Mutators
+
+`recordShot` - the method `recordShot` will mutate the value of the instance variable `shots` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
+
+`recordGoal` - the method `recordGoal` will mutate the value of the instance variable `goals` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
+
+`recordPPG` - the method `recordPPG` will mutate the value of the instance variable `ppg` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
+
+`recordPPA` - the method `recordPPA` will mutate the value of the instance variable `ppa` by incrementing it by one. The method will not recieve any arguements, nor will it return any value.
+
+#### Accessors
+
+`getName` - the method `getName` has a purpose of allowing the caller access the to player's `name` variable. The method will not recieve any arguements but it will return the String value of `name`.
+
+`getPosition` - the method `getPosition` has a purpose of allowing the caller access the to player's `position` variable. The method will not recieve any arguements but it will return the enum value of `position`.
+
+`getJerseyNumber` - the method `getJerseyNumber` has a purpose of allowing the caller access the to player's `jerseyNumber` variable. The method will not recieve any arguements but it will return the String value of `jerseyNumber`.
+
+`getDateOfBirth` - the method `getDateOfBirth` has a purpose of allowing the caller access the to player's `dateOfBirth` variable. The method will not recieve any arguements but it will return the String value of `dateOfBirth`.
+
+`getWeight` - the method `getWeight` has a purpose of allowing the caller access the to player's `weight` variable. The method will not recieve any arguements but it will return the String value of `weight`.
+
+`getHeight` - the method `getHeight` has a purpose of allowing the caller access the to player's `height` variable. The method will not recieve any arguements but it will return the String value of `height`.
+
+`getGoals` - the method `getGoals` has a purpose of allowing the caller access the to player's `goals` variable. The method will not recieve any arguements but it will return the int value of `goals`.
+
+`getAssists` - the method `getAssists` has a purpose of allowing the caller access the to player's `assists` variable. The method will not recieve any arguements but it will return the int value of `assists`.
+
+`getPPG` - the method `getPPG` has a purpose of allowing the caller access the to player's `ppg` variable. The method will not recieve any arguements but it will return the int value of `ppg`.
+
+`getPPA` - the method `getPPA` has a purpose of allowing the caller access the to player's `ppa` variable. The method will not recieve any arguements but it will return the int value of `ppa`.
+
+`getShots` - the method `getShots` has a purpose of allowing the caller access the to player's `shots` variable. The method will not recieve any arguements but it will return the int value of `shots`.
 
 ### Private Implementation
 
-_Instance Variables
+#### Instance Variables
 
 * `String name` - `name` is of type String and describes the name of the player
 * `enum Position{LW,RW,C,D}` - `Position` is an enum that contains the following 4 different positions:
@@ -64,7 +98,7 @@ Public methods
 
 ### Private Implementation
 
-_Constructors_
+#### Constructors_
 
 PlayerList()
 

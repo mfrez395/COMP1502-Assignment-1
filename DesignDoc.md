@@ -22,7 +22,11 @@ These pieces of data will be exapanded on in the **private implementation** sect
 
 #### Constructors
 
-`Player(Name, Position, JerseyNumber, DateOfBirth, HomeTown, Height)` - In this constructor, the player descriptive information is passed in and all statistical information is initialized with the value `0`. The pointer of a player with the information that is encapuslated in the class is returned to the class that implements Player.
+`Player(name, position, jerseyNumber, dateOfBirth, homeTown, weight, height)` - This is the "roster" constructor. This constructor creates a unique player with no statistical information. In this constructor, the player descriptive information is passed in and all statistical information is initialized with the value `0`. The pointer of the Player is returned to the class that implements Player.
+
+`Player(name, position, jerseyNumber, dateOfBirth, homeTown, weight, height, shots, goals, assists, ppg, ppa, shotAverage)` - This is the "recreation" constructor. This constructor "recreates" a player will all the required information that a Player encasulates. THe purpose of this constructor is to recreate a Player from the data in a file. In this constructor, the player descriptive information and the player statistics are passed in as arguements. The pointer of the Player is returned to the class that implements Player.
+
+`Player(Player copyPlayer)` - This is the "copy" constructor. This constructor creates a copy Player with the descriptive information and the player stats of the `copyPlayer` passed in. In this constructor, the `copyPlayer` is passed in as a type Player and all the values of the new player are equal to the values of the `copyPlayer`. The pointer of the Player is returned to the class that implements Player.
 
 #### Methods
 
@@ -85,40 +89,44 @@ These pieces of data will be exapanded on in the **private implementation** sect
 
 ## PlayerList Class
 
-The PlayerList class's primary function is to maintain a collection of Player objects and communicate with a specific player to increment specific statistics. The encapsulated information is the collection of players and the file name of where the information is stored after the program is closed. The PlayerList class has an aggregation relationship with the class Player.java. The class is made up of players but is not dependant on players to function. The PlayerList class assumes there is already a file that includes data (and is not empty) of player information seperated by a comma.
+The PlayerList class's primary function is to maintain a collection of Player objects and communicate with a specific player to increment specific statistics. The encapsulated information is the collection of players and the file name of where the information is stored after the program is closed. The PlayerList class has an aggregation relationship with the class Player.java. The class is made up of players but is not dependant on players to function. The PlayerList class assumes that the file name is holds exists and includes data (is not empty) of player information seperated by a comma.
 
 ### Public Interface
+
+#### Constructors_
+
+`PlayerList()` - In this constructor, a new PlayerList object is created. No arguements are passed in because the PlayerList will already contain the file name of the data the will be used to populate the ArrayList of Players. The constructor will call the method `populateFromFile()` which will populate the ArrayList with the information in the file. The pointer of a PlayerList object is returned to the class that implements PlayerList.
 
 #### Methods
 
 ##### Mutators
 
-* `recordShot(String playerNumber)`
+* `recordShot(String playerNumber)` - this method will record a shot of a specific player. The arguement `playerNumber` is passed in and will be used to search for a matching Player to increment the `shots` value of that specific player. The method will call another method `getPlayer` to perform the search function.
 
-* `recordGoal(String goalPlayerNumber)`
+* `recordGoal(String goalPlayerNumber)` - The next three methods are overloaded methods that will increment the `goals` variable on one player and increment the `assists` variable on two other players, using the `getPlayer` method to find each player.
 * `recordGoal(String goalPlayerNumber, assistPlayerNumber)`
 * `recordGoal(String goalPlayerNumber, assistPlayerNumber, assist2PlayerNumber)`
 
-* `recordPPG(String ppgPlayerNumber)`
+* `recordPPG(String ppgPlayerNumber)` - The next three methods are overloaded methods that will increment the `ppg` variable on one player and increment the `ppa` variable on two other players, using the `getPlayer` method to find each player.
 * `recordPPG(String ppgPlayerNumber, ppaPlayerNumber)`
 * `recordPPG(String ppgPlayerNumber, ppaPlayerNumber, ppa2PlayerNumber)`
 
 ##### Accessors
 
-* `getPlayer(String playerNumber)` - `getPlayer` will return a player from the list that matches the player number entered. The method will receive the arguement `playerNumber` as a String and will return the respective Player object in the `players` ArrayList. THe method will include a search algorithm that will look through the `players` ArrayList to find the Player object with a `jerseyNumber` that matches `playerNumber`. The method will return -1 if no Player is found. 
+* `getPlayer(String playerNumber)` - `getPlayer` will return a Player from the list that matches the player number entered. The method will receive the arguement `playerNumber` as a String and will return the respective Player object in the `players` ArrayList. The method will include a search algorithm that will look through the `playerList` ArrayList to find the Player object with a `jerseyNumber` that matches `playerNumber`. The method will return -1 if a matching Player is not found. 
 
-##### Helpers
+##### Processors
 
-* `saveToFile()`
-* `populateFromFile`
+* `saveToFile()` - The `saveToFile` method will save the information of the `playerList` ArrayList. The method will not receive and arguements, nor will it return anything. The main purpose the method is to save the information of each of the Players in `playerList` to its seperate row, with all of the data seperated by "," in the file `FILE_NAME`.
+
+* `populateFromFile()` - The `populateFromFile` method will retrieve all the information from the file `FILE_NAME`, create new Players from each line and populate the `playerList` ArrayList will the number of Players that are in the file. The method will not take in any arguements and it will not return anything.
 
 ### Private Implementation
 
+#### Instance Variables
 
-
-#### Constructors_
-
-PlayerList()
+`ArrayList<Player> playerList` - The variable `playerList` is of type ArrayList and will be a collection of all of the Player objects 
+`final String FILE_NAME` - The variable `FILE_NAME` is of type String that will contain the full name of the file that contains or will contain the complete player data. 
 
 
 

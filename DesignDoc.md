@@ -9,9 +9,11 @@ The Player class is an object that's primary function is to holds the values of 
 * Date of Birth
 * Home Town
 * Weight
-* Height 
+* Height
+* Points
 * Goals
 * Assists
+* Power Play Points
 * Power Play Goals
 * Power Play Assists
 * Shots
@@ -54,9 +56,13 @@ These pieces of data will be exapanded on in the **private implementation** sect
 
 * `getHeight` - the method `getHeight` has a purpose of allowing the caller access the to player's `height` variable. The method will not recieve any arguements but it will return the String value of `height`.
 
+* `getPoints` - the method `getPoints` has a purpose of allowing the caller access to the player's `points` variable. The method will not recive any arguements but it will return the int value of `points`.
+
 * `getGoals` - the method `getGoals` has a purpose of allowing the caller access the to player's `goals` variable. The method will not recieve any arguements but it will return the int value of `goals`.
 
 * `getAssists` - the method `getAssists` has a purpose of allowing the caller access the to player's `assists` variable. The method will not recieve any arguements but it will return the int value of `assists`.
+
+* `getPPP` - the method `getPPP` has a purpose of allowing the caller access to the player's `ppp` variable. The method will not recive any arguements but it will return the int value of `ppp`.
 
 * `getPPG` - the method `getPPG` has a purpose of allowing the caller access the to player's `ppg` variable. The method will not recieve any arguements but it will return the int value of `ppg`.
 
@@ -80,8 +86,10 @@ These pieces of data will be exapanded on in the **private implementation** sect
 * `String homeTown` - `homeTown` is of type String and describes the hometown that the player originates from. The home town will be in the format of "Westfield MA".
 * `String weight` - `weight` is of type String and describes the weight of the player. The weight is in pounds but does not contain the extention lbs.
 * `String height` - `height` is of type String and describes the height of the player. The height is in feet and inches and will be in the format of "5'7"".
+* `int points` - `points` is of type int and describes the number of points accumulated by the player (goals and assists combined).
 * `int goals` - `goals` is of type int and describes the number of goals accumulated by the player.
 * `int assists` - `assists` is of type int and describes the number of assists accumulated by the player.
+* `int ppp` - `ppp` is of type int and describes the number of powerplay points accumulated by the player (ppg and ppa combined).
 * `int ppg` - `ppg` is of type int and describes the number of powerplay goals accumulated by the player.
 * `int ppa` - `ppa` is of type int and describes the number of powerplay assists accumulated by the player.
 * `int shots` - `shots` is of type int and describes the number of shots the player has taken.

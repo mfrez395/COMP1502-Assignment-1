@@ -112,7 +112,7 @@ The PlayerList class's primary function is to maintain a collection of Player ob
 
 ##### Mutators
 
-* `addPlayer(Player player)` - this method will add a player (with all its data pre-included) to the `players` ArrayList. The method passes in a player and does not return anything.
+* `addPlayer(Player player)` - this method (with a return-value of boolean) will add a player (with all its data pre-included) to the `players` ArrayList. The method passes in a player to add to the list. It will return true if the player is successfully added without duplicate _`jerseyNumber`_. If there is already a player with the same `jerseyNumber`, the method will return false.
 
 * `recordShot(String playerNumber)` - this method will record a shot of a specific player. The arguement `playerNumber` is passed in and will be used to search for a matching Player to increment the `shots` value of that specific player. The method will call another method `getPlayer` to perform the search function.
 

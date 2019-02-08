@@ -113,7 +113,7 @@ public class TestPlayerList{
 		assertEquals(goals + 1, playerList.getPlayer(jerseyNumber).getGoals());
 		//test passes if the number of goals of the player is incremented from its previous value
 		assertEquals(points + 1, playerList.getPlayer(jerseyNumber).getPoints());
-		//test passes 
+		//test passes if the number of points of the player is incremented from its previous value
 		assertEquals(shots + 1, playerList.getPlayer(jerseyNumber).getShots());
 		//test passes if the number of shots of the player is incremented from its previous value
 		assertTrue(shotAverage < playerList.getPlayer(jerseyNumber.getShotAverage());
@@ -173,7 +173,7 @@ public class TestPlayerList{
 		assertEquals(goals + 1, playerList.getPlayer(jerseyNumber).getGoals());
 		//test passes if the number of goals of the player is incremented from its previous value
 		assertEquals(points + 1, playerList.getPlayer(jerseyNumber).getPoints());
-		//test passes 
+		//test passes if the number of points of the player is incremented from its previous value
 		assertEquals(shots + 1, playerList.getPlayer(jerseyNumber).getShots());
 		//test passes if the number of shots of the player is incremented from its previous value
 		assertTrue(shotAverage < playerList.getPlayer(jerseyNumber.getShotAverage());
@@ -263,7 +263,7 @@ public class TestPlayerList{
 		assertEquals(goals + 1, playerList.getPlayer(jerseyNumber).getGoals());
 		//test passes if the number of goals of the player is incremented from its previous value
 		assertEquals(points + 1, playerList.getPlayer(jerseyNumber).getPoints());
-		//test passes 
+		//test passes if the number of points of the player is incremented from its previous value
 		assertEquals(shots + 1, playerList.getPlayer(jerseyNumber).getShots());
 		//test passes if the number of shots of the player is incremented from its previous value
 		assertTrue(shotAverage < playerList.getPlayer(jerseyNumber.getShotAverage());
@@ -317,8 +317,8 @@ public class TestPlayerList{
 	
 	
 	
-	@Test
-	public void recordGoalWorks() {	
+	@Test //TEST WRITTEN
+	public void recordPPGWorks() {	
 
 		String name = "Mark Frezell";
 		Position position = Position.C;
@@ -340,20 +340,20 @@ public class TestPlayerList{
 		PlayerList playerList = new PlayerList();
 		playerList.addPlayer(player);
 		
-		playerList.recordGoal(jerseyNumber);
+		playerList.recordPPG(jerseyNumber);
 		
-		assertEquals(goals + 1, playerList.getPlayer(jerseyNumber).getGoals());
-		//test passes if the number of goals of the player is incremented from its previous value
-		assertEquals(points + 1, playerList.getPlayer(jerseyNumber).getPoints());
-		//test passes 
+		assertEquals(ppg + 1, playerList.getPlayer(jerseyNumber).getPPG());
+		//test passes if the number of ppg of the player is incremented from its previous value
+		assertEquals(ppp + 1, playerList.getPlayer(jerseyNumber).getPPP());
+		//test passes if the number of ppp of the player is incremented from its previous value
 		assertEquals(shots + 1, playerList.getPlayer(jerseyNumber).getShots());
 		//test passes if the number of shots of the player is incremented from its previous value
-		assertTrue(shotAverage < playerList.getPlayer(jerseyNumber.getShotAverage());
-		//test passes if the new shotAverage is GREATER than the previous
+
+		//TODO no shotAverage incremented here?
 	}
 
-	@Test
-	public void recordGoalAndOneAssistWorks() {	
+	@Test //TEST WRITTEN
+	public void recordPPGAndOnePPAWorks() {	
 
 		String name = "Mark Frezell";
 		Position position = Position.C;
@@ -397,26 +397,26 @@ public class TestPlayerList{
 		playerList.addPlayer(player);
 		playerList.addPlayer(player2);
 		
-		playerList.recordGoal(jerseyNumber, jerseyNumber2);
+		playerList.recordPPG(jerseyNumber, jerseyNumber2);
 		
 		
-		/* GOAL ADDED FOR THE FIRST PLAYER*/
+		/* PPG ADDED FOR THE FIRST PLAYER*/
 		
-		assertEquals(goals + 1, playerList.getPlayer(jerseyNumber).getGoals());
+		assertEquals(ppg + 1, playerList.getPlayer(jerseyNumber).getPPG());
 		//test passes if the number of goals of the player is incremented from its previous value
-		assertEquals(points + 1, playerList.getPlayer(jerseyNumber).getPoints());
+		assertEquals(ppp + 1, playerList.getPlayer(jerseyNumber).getPPP());
 		//test passes 
 		assertEquals(shots + 1, playerList.getPlayer(jerseyNumber).getShots());
 		//test passes if the number of shots of the player is incremented from its previous value
-		assertTrue(shotAverage < playerList.getPlayer(jerseyNumber.getShotAverage());
-		//test passes if the new shotAverage is GREATER than the previous
+
+		//TODO no shotAverage incremented here?
 		
 		
-		/* ASSIST ADDED FOR THE SECOND PLAYER */
+		/* PPA ADDED FOR THE SECOND PLAYER */
 		
-		assertEquals(assists2 + 1, playerList.getPlayer(jerseyNumber2).getAssist());
+		assertEquals(ppa2 + 1, playerList.getPlayer(jerseyNumber2).getPPA());
 		//test passes if the number of goals of the player is incremented from its previous value
-		assertEquals(points2 + 1, playerList.getPlayer(jerseyNumber2).getPoints());
+		assertEquals(ppp2 + 1, playerList.getPlayer(jerseyNumber2).getPPP());
 		//test passes if the number of points for the player increases by one
 		
 	}
@@ -487,34 +487,34 @@ public class TestPlayerList{
 		playerList.addPlayer(player2);
 		playerList.addPlayer(player3);
 		
-		playerList.recordGoal(jerseyNumber, jerseyNumber2, jerseyNumber3);
+		playerList.recordPPG(jerseyNumber, jerseyNumber2, jerseyNumber3);
 		
 		
-		/* GOAL ADDED FOR THE FIRST PLAYER*/
+		/* PPG ADDED FOR THE FIRST PLAYER*/
 		
-		assertEquals(goals + 1, playerList.getPlayer(jerseyNumber).getGoals());
+		assertEquals(ppg + 1, playerList.getPlayer(jerseyNumber).getPPG());
 		//test passes if the number of goals of the player is incremented from its previous value
-		assertEquals(points + 1, playerList.getPlayer(jerseyNumber).getPoints());
+		assertEquals(ppp + 1, playerList.getPlayer(jerseyNumber).getPPP());
 		//test passes 
 		assertEquals(shots + 1, playerList.getPlayer(jerseyNumber).getShots());
 		//test passes if the number of shots of the player is incremented from its previous value
-		assertTrue(shotAverage < playerList.getPlayer(jerseyNumber.getShotAverage());
-		//test passes if the new shotAverage is GREATER than the previous
+
+		//TODO no shotAverage incremented here?
 		
 		
-		/* ASSIST ADDED FOR THE SECOND PLAYER */
+		/* PPA ADDED FOR THE SECOND PLAYER */
 		
-		assertEquals(assists2 + 1, playerList.getPlayer(jerseyNumber2).getAssist());
+		assertEquals(ppa2 + 1, playerList.getPlayer(jerseyNumber2).getPPA());
 		//test passes if the number of goals of the player is incremented from its previous value
-		assertEquals(points2 + 1, playerList.getPlayer(jerseyNumber2).getPoints());
+		assertEquals(ppp2 + 1, playerList.getPlayer(jerseyNumber2).getPPP());
 		//test passes if the number of points for the player increases by one
 
 		
-		/* ASSIST ADDED FOR THE THIRD PLAYER */
+		/* PPA ADDED FOR THE THIRD PLAYER */
 		
-		assertEquals(assists3 + 1, playerList.getPlayer(jerseyNumber3).getAssist());
+		assertEquals(ppa3 + 1, playerList.getPlayer(jerseyNumber3).getPPA());
 		//test passes if the number of goals of the player is incremented from its previous value
-		assertEquals(points3 + 1, playerList.getPlayer(jerseyNumber3).getPoints());
+		assertEquals(ppp3 + 1, playerList.getPlayer(jerseyNumber3).getPPP());
 		//test passes if the number of points for the player increases by one
 				
 	}

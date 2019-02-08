@@ -17,6 +17,7 @@ The Player class is an object that's primary function is to holds the values of 
 * Power Play Goals
 * Power Play Assists
 * Shots
+* Shot Average
 
 These pieces of data will be exapanded on in the **private implementation** section. The Player class has a composition relationship with the class String and enum because it is dependant and made up of Strings and an enum in order to properly function. The Player class assumes that the class that implements Player will already have the data to fill the descriptive data (Name - Height) of the player. The Player class also assumes that any given player starts off with zero shots, goals, assists, powerplay goals and powerplay assists. 
 
@@ -70,6 +71,8 @@ These pieces of data will be exapanded on in the **private implementation** sect
 
 * `getShots` - the method `getShots` has a purpose of allowing the caller access the to player's `shots` variable. The method will not recieve any arguements but it will return the int value of `shots`.
 
+* `getShotAverage` - the method `getShotAverage` has a purpose of allowing the caller access the to player's `shotAverage` variable. The method will not recieve any arguements but it will return the int value of `shotAverage`.
+
 ### Private Implementation
 
 #### Instance Variables
@@ -101,13 +104,15 @@ The PlayerList class's primary function is to maintain a collection of Player ob
 
 ### Public Interface
 
-#### Constructors_
+#### Constructors
 
 `PlayerList()` - In this constructor, a new PlayerList object is created. No arguements are passed in because the PlayerList will already contain the file name of the data the will be used to populate the ArrayList of Players. The constructor will call the method `populateFromFile()` which will populate the ArrayList with the information in the file. The pointer of a PlayerList object is returned to the class that implements PlayerList.
 
 #### Methods
 
 ##### Mutators
+
+* `addPlayer(Player player)` - this method (with a return-value of boolean) will add a player (with all its data pre-included) to the `players` ArrayList. The method passes in a player to add to the list. It will return true if the player is successfully added without duplicate _`jerseyNumber`_. If there is already a player with the same `jerseyNumber`, the method will return false.
 
 * `recordShot(String playerNumber)` - this method will record a shot of a specific player. The arguement `playerNumber` is passed in and will be used to search for a matching Player to increment the `shots` value of that specific player. The method will call another method `getPlayer` to perform the search function.
 

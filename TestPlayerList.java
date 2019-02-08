@@ -421,7 +421,7 @@ public class TestPlayerList{
 		
 	}
 	
-	@Test 
+	@Test //TEST WRITTEN
 	public void recordGoalAndTwoAssistsWorks() {	
 
 		//begin creating first player

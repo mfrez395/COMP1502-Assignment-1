@@ -129,11 +129,9 @@ The PlayerList class's primary function is to maintain a collection of Player ob
 
 * `getPlayer(String playerNumber)` - `getPlayer` will return a Player from the list that matches the player number entered. The method will receive the arguement `playerNumber` as a String and will return the respective Player object in the `players` ArrayList. The method will include a search algorithm that will look through the `playerList` ArrayList to find the Player object with a `jerseyNumber` that matches `playerNumber`. The method will return -1 if a matching Player is not found. 
 
-##### Processors
+##### Processor
 
 * `saveToFile()` - The `saveToFile` method will save the information of the `playerList` ArrayList. The method will not receive and arguements, nor will it return anything. The main purpose the method is to save the information of each of the Players in `playerList` to its seperate row, with all of the data seperated by "," in the file `FILE_NAME`.
-
-* `populateFromFile()` - The `populateFromFile` method will retrieve all the information from the file `FILE_NAME`, create new Players from each line and populate the `playerList` ArrayList will the number of Players that are in the file. The method will not take in any arguements and it will not return anything.
 
 ### Private Implementation
 
@@ -143,5 +141,7 @@ The PlayerList class's primary function is to maintain a collection of Player ob
 
 `final String FILE_NAME` - The variable `FILE_NAME` is of type String that will contain the full name of the file that contains or will contain the complete player data.  
 
+##### Processor
 
+* `populateFromFile()` - The `populateFromFile` method will retrieve all the information from the file `FILE_NAME`, create new Players from each line and populate the `playerList` ArrayList will the number of Players that are in the file. The method will not take in any arguements and it will not return anything.
 

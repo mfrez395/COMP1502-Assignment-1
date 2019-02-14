@@ -96,6 +96,7 @@ These pieces of data will be exapanded on in the **private implementation** sect
 * `int ppg` - `ppg` is of type int and describes the number of powerplay goals accumulated by the player.
 * `int ppa` - `ppa` is of type int and describes the number of powerplay assists accumulated by the player.
 * `int shots` - `shots` is of type int and describes the number of shots the player has taken.
+* `double shotAverage` - `shotAverate` is of type double and in a calculation of goals/shots to get the decimal of goals to shots.
 
 
 ## PlayerList Class

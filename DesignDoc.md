@@ -4,7 +4,7 @@
 
 The Player class is an object that's primary function is to holds the values of a single player and can increment shots, goals, assists, powerplay goals and powerplay assists of the specific player. The class encapsulates all the following data:
 * Name
-* Postion
+* Position
 * Jersey Number
 * Date of Birth
 * Home Town

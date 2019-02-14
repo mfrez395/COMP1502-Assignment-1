@@ -140,8 +140,8 @@ The PlayerList class's primary function is to maintain a collection of Player ob
 #### Instance Variables
 
 `ArrayList<Player> playerList` - The variable `playerList` is of type ArrayList and will be a collection of all of the Player objects 
-`final String FILE_NAME` - The variable `FILE_NAME` is of type String that will contain the full name of the file that contains or will contain the complete player data. 
 
+`final String FILE_NAME` - The variable `FILE_NAME` is of type String that will contain the full name of the file that contains or will contain the complete player data.  
 
 
 

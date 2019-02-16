@@ -98,6 +98,11 @@ These pieces of data will be exapanded on in the **private implementation** sect
 * `int shots` - `shots` is of type int and describes the number of shots the player has taken.
 * `double shotAverage` - `shotAverate` is of type double and in a calculation of goals/shots to get the decimal of goals to shots.
 
+#### Methods
+
+##### Helpers
+
+* `calculateShotAverage()` - The `calculateShotAverage` method will complete the calculation of `goals/shots`, to keep the `shotAverage` variable up to date every time there is a shot, goal or powerplay goal. The method will not take in any arguements and it will not return anything. It's purpose is only to set the value of `shotAverage`.
 
 ## PlayerList Class
 

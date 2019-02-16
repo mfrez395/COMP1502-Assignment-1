@@ -147,18 +147,29 @@ public class Player {
 	
 	public void recordShot() {
 		shots++;
+		calculateShotAverage();
+	}
+	
+	public void recordAssist() {
+		assists++;
+		points++;
 	}
 	
 	public void recordGoal() {
 		goals++;
+		points++;
+		calculateShotAverage();
 	}
 	
 	public void recordPPG() {
 		ppg++;
+		ppp++;
+		calculateShotAverage();
 	}
 	
 	public void recordPPA() {
 		ppa++;
+		ppp++;
 	}
 
 	
@@ -219,5 +230,17 @@ public class Player {
 	public int getShots() {
 		return shots;
 	}	
+	
+	public double getShotAverage() {
+		return shotAverage;
+	}
+	
+	/* ~~ HELPERS ~~ */
+	
+	private void calculateShotAverage() {
+		shotAverage = goals/ (double) shots;
+		//cast to a double to ensure that there is no integer division
+	}
+	
 
 }
